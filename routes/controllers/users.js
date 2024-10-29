@@ -46,13 +46,4 @@ const validateCredentials = async (req, res) => {
     }
   }
 
-  const getDepartaments = async (req, res) => {
-    try {
-      const departamentos = await pool.db('promocion').collection('colombia').find().toArray();
-      res.json(departamentos);
-    } catch (error) {
-      res.status(500).json({ message: 'Error al obtener departamentos' });
-    }
-  }
-
-  module.exports = { validateCredentials, Signup, getDepartaments };
+  module.exports = { validateCredentials, Signup };
